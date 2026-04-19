@@ -98,6 +98,13 @@ This world uses a complex system of cameras and layers to render the entire 3D e
 <br><br>
 When your shader is replaced, your main texture, color, normal maps, smoothness, metalic, and packed specular maps will be used, but any other settings or textures will be ignored, and every enabled mesh will render opaque.
 <br><br>
+Shader Specifics:<br>Normal maps have their own tile/offset, and won't use the _Maintex transforms
+<br>We're intercepting Poiyomi's packed maps for Smooth&Metal, and nothing else.
+<br>R is metalic map, G is Smoothness map, B is reflection, A is specular.
+<br>if you use a white and black mask, it will stop both metal and smoothness
+<br>if you don't include a mask, only _Smoothness / _Metallic sliders will be used (0 = not at all smooth, 1 = very smooth)     
+<br>_Smoothness (most shaders), _Glossiness (VRChat standard lite), and _MochieRoughnessMultiplier (poiyomi locked) are all refferenced in-world, only the highest value will be used 
+<br><br>
 If you have glasses or other materials you need to be invisible, you can download the shader below and enable the shader keyword _MODE_ZEROPOS_ON . If you're already happy with how you look in the test world below, you're good to go! 
       <br><br>Poor or better reccomended, Very-Poor avatars must disable their imposters<br>
       <h3>Try your avatar in VRChat <a href="https://vrch.at/d67wy833">https://vrch.at/d67wy833</a></h4>    
